@@ -18,6 +18,15 @@ class Preferences {
     this.__set__('show-healthy-builds', value);
   }
 
+  get showOnlyLastNameComponent() {
+    const showOnlyLastNameConfig = this.__get__('show-only-last-name-component');
+    return !(showOnlyLastNameConfig && showOnlyLastNameConfig === 'false');
+  }
+
+  set showOnlyLastNameComponent(value) {
+    this.__set__('show-only-last-name-component', value);
+  }
+
   get disableIdleOptimization() {
     return this.__get__('disable-max-idle-time') === 'true';
   }

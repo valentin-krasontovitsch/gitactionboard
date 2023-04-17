@@ -35,6 +35,9 @@ export default {
     },
     maxIdleTime() {
       return preferences.maxIdleTime;
+    },
+    showOnlyLastNameComponent() {
+      return preferences.showOnlyLastNameComponent;
     }
   },
   methods: {
@@ -45,6 +48,12 @@ export default {
       return lastBuildStatus === 'Success' && activity === 'Sleeping';
     },
     marshalData(data) {
+      if (this.showOnlyLastNameComponent) {
+        data = data.map(dataItem => {
+          dataItem.name = dataItem.name.split("::").pop().split("/").pop().trim()
+          return dataItem
+        });
+      }
       return data.filter(({ lastBuildStatus, activity }) => {
         return this.showHealthyBuilds ? true : !this.isIdleHealthyBuild(lastBuildStatus, activity);
       }

@@ -22,7 +22,16 @@
               >
             </div>
           </div>
-
+          <div class="preferences-body-content">
+            <div>
+              Show only last component of job names:
+              <input
+                v-model="showOnlyLastNameComponent"
+                type="checkbox"
+                class="preferences-input-checkbox"
+              >
+            </div>
+          </div>
           <div class="preferences-body-content">
             <div>
               Disable Max Idle Time:
@@ -74,6 +83,7 @@ export default {
   data() {
     return {
       showHealthyBuilds: preferences.showHealthyBuilds,
+      showOnlyLastNameComponent: preferences.showOnlyLastNameComponent,
       maxIdleTime: preferences.maxIdleTime,
       disableIdleOptimization: preferences.disableIdleOptimization,
       saved: true
@@ -82,6 +92,7 @@ export default {
   computed: {
     isDirty() {
       return !(this.saved && this.showHealthyBuilds === preferences.showHealthyBuilds &&
+          this.showOnlyLastNameComponent === preferences.showOnlyLastNameComponent &&
           this.maxIdleTime === preferences.maxIdleTime &&
           this.disableIdleOptimization === preferences.disableIdleOptimization);
     },
@@ -104,6 +115,7 @@ export default {
     savePreferences() {
       preferences.disableIdleOptimization = this.disableIdleOptimization;
       preferences.showHealthyBuilds = this.showHealthyBuilds;
+      preferences.showOnlyLastNameComponent = this.showOnlyLastNameComponent;
       preferences.maxIdleTime = this.maxIdleTime;
 
       this.saved = true;
