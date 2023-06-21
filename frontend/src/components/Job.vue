@@ -65,8 +65,8 @@ export default {
 
 <style scoped>
 .job-name {
-  color: white;
-  font-weight: bold;
+  color: #243746;
+  font-weight: 500;
   font-size: 14px;
   overflow: auto;
   display: inline-grid;
@@ -90,15 +90,15 @@ a {
 }
 
 .success {
-  background-color: #3a964a;
+  background-color: #E6FAEC;
 }
 
 .failure {
-  background-color: #e23d2c;
+  background-color: #FFE7D6;
 }
 
 .unknown {
-  background-color: #6d6a6a;
+  background-color: #DFF5FF;
 }
 
 .job.building.success {
