@@ -185,7 +185,7 @@ export default {
 
 <style scoped>
 .content-container {
-  font-family: OpenSans, sans-serif;
+  font-family: courier;
   display: grid;
   align-items: center;
   grid-template-rows: repeat(auto-fit, minmax(90px, 115px));
