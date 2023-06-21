@@ -80,10 +80,10 @@ a {
 }
 
 .job {
-  box-shadow: 5px 5px 10px #777;
+  box-shadow: none;
   border-radius: 6px;
   height: 90px;
-  border: 2px solid #000;
+  border: none;
   padding: 5px;
   display: flex;
   flex-direction: column;
