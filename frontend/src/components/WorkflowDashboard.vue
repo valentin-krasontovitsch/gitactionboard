@@ -1,6 +1,5 @@
 <template>
   <div id="container">
-    <DashboardHeader sub-header="Workflow Jobs" />
     <Dashboard
       :disable-max-idle-time="disableIdleOptimization"
       :max-idle-time="maxIdleTime"
@@ -17,12 +16,11 @@ import router from '@/router';
 import preferences from '@/services/preferences';
 import Dashboard from '@/components/Dashboard';
 import { fetchCctrayJson } from '@/services/apiService';
-import DashboardHeader from '@/components/DashboardHeader';
 
 export default {
   el: '#app',
   name: 'WorkflowDashboard',
-  components: { DashboardHeader, Dashboard },
+  components: { Dashboard },
   computed: {
     currentPath() {
       return router.currentRoute.value.path;
